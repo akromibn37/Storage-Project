@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Storage Suksawat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">    
+    <link rel="stylesheet" href="css/bootstrap.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body id="head" data-spy="scroll" data-target=".navbar" data-offset="60">
+<!-- navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <!-- <div class="container"> -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand" href="#head">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="nav navbar-nav navbar-right">                   
+                <li><a href="#about" onclick="loadoldContent()">เกี่ยวกับเรา</a></li>
+                <li><a href="#promotion" onclick="loadoldContent()">โปรโมชั่น</a></li>
+                <li><a href="#facility" onclick="loadoldContent()">สิ่งอำนวยความสะดวก</a></li>
+                <li><a href="#" onclick="getContent('gallery.html')">รูปภาพ</a></li>
+                <li><a href="#price" onclick="getContent('price.html')">ราคา</a></li>
+                <li><a href="#contactus" onclick="loadoldContent()">ติดต่อเรา</a></li>
+                <li><a href="#terms" onclick="loadoldContent()">เงื่อนไขการใช้บริการ</a></li>
+                <li><a href="#login" onclick="loadoldContent()"><span class="glyphicon glyphicon-log-in"> ล็อกอิน</span></a></li>
+            </ul>
+        </div>
+    <!-- </div> -->
+</nav>
+<!-- head -->
+<div id="content">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h2>ค่าบริการ</h2>
+            <h4>อัตราค่าบริการสำหรับการเช่าตู้สัมภาระมี 4 แบบให้ท่านเลือก</h4>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h2>Basic</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>1</strong> เดือน</p>
+                        <h2><strong>5000</strong> บาท/เดือน</h2>
+                        <p><strong>100</strong> %</p>                   
+                    </div>
+                    <div class="panel-footer">
+                        <h5>ชำระเต็มจำนวน</h5>
+                        <h3><strong>5000 บาท</strong></h3>
+                        <!-- <button class="btn btn-lg">Sign Up</button> -->
+                    </div>
+                </div> 
+            </div> 
+            <div class="col-md-3 col-sm-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h2>Pro</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>3</strong> เดือน</p>
+                        <h2><strong>4000</strong> บาท/เดือน</h2>
+                        <p><strong>80</strong> %</p>                    
+                    </div>
+                    <div class="panel-footer">
+                        <h5>ชำระเต็มจำนวน</h5>
+                        <h3><strong>12000 บาท</strong></h3>
+                    </div>
+                </div> 
+            </div> 
+            <div class="col-md-3 col-sm-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h2>Premium</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>6</strong> เดือน</p>
+                        <h2><strong>3600</strong> บาท/เดือน</h2>
+                        <p><strong>72</strong> %</p>                    
+                    </div>
+                    <div class="panel-footer">
+                        <h5>ชำระเต็มจำนวน</h5>
+                        <h3><strong>21600 บาท</strong></h3>
+                    </div>
+                </div> 
+            </div> 
+            <div class="col-md-3 col-sm-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h2>Super Premium</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p><strong>12</strong> เดือน</p>
+                        <h2><strong>3000</strong> บาท/เดือน</h2>
+                        <p><strong>60</strong> %</p>
+                    </div>
+                    <div class="panel-footer">
+                        <h5>ชำระเต็มจำนวน</h5>
+                        <h3><strong>36000 บาท</strong></h3>
+                    </div>
+                </div> 
+            </div> 
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div id="contactus" class="container">
+        <h2 class="text-center">CONTACT</h2>
+        <div class="row">
+            <div class="col-sm-5">
+                <p>Please feel free to contact us:</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Suksawat 64,Suksawat Road,Samutprakran, Thailand 10130</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +66 891777740</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> rckstorage@gmail.com</p>            
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">Send</button>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="googleMap" style="height:400px;width:100%;"></div>
+        <script>
+        function myMap() {
+            var myCenter = new google.maps.LatLng(13.648553, 100.518416);
+            var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var marker = new google.maps.Marker({position:myCenter});
+            marker.setMap(map);
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDw1TQpB5dXIHysA0URHrlWPsSKc1xNybk&callback=myMap"></script>
+        <!-- <script async defer src = "https://maps.googleapis.com/maps/api/js"></script> -->
+    </div>
+    <div id="footerzone" class="container text-center">
+        <a href="#head" title="To top">
+            <span id="footer-glyphicon" class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p>
+            This website is the authorize of RKC company.
+        </p>
+    </div>
+</footer>
+<script>
+    const original = document.getElementById("content").innerHTML
+    // console.log(original)
+    function loadoldContent(){
+        var divContent = document.getElementById("content");
+        divContent.innerHTML = original
+    }
+    function getContent(pagename) {
+        var divContent = document.getElementById("content");
+        divContent.innerHTML = loadPage(pagename);
+    }
+    function loadPage(href)
+    {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", href, false);
+        xmlhttp.send();
+        return xmlhttp.responseText;
+    }
+    $(document).on('click','.navbar-collapse.in',function(e) {
+        if( $(e.target).is('a') ) {
+            $(this).collapse('hide');
+        }
+    });
+</script>
+<script src="main.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
