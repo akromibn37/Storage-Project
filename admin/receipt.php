@@ -1,9 +1,9 @@
 <?php
     require_once("function/receipt_function.php");
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
     if($_SESSION['username'] == "" or $_SESSION['password'] == "")
 	{
 		header("location:../index.html");
@@ -13,6 +13,7 @@
 <?php
     require_once("function/receipt_function.php");
     $receipts = getAllreceipt();
+    $sum = getSumamount();
     // print_r($receipts);
     if(count($receipts)>0)
     {
@@ -27,7 +28,7 @@
                 }
                 echo "<th class='text-center'>". "แก้ไข" . "</th>";
                 // echo "<th>". "ลบ" . "</th>";
-            echo "</tr>";   
+            echo "</tr>";
             for($i = 0;$i < count($receipts);$i++)
             {
                 echo "<tr>";
@@ -51,10 +52,22 @@
                 echo "<td>". "<a onclick = 'return getContent(\"form/receipt_form.php?action=edit&id=$id\")'>แก้ไข</a>" . "</td>";
                 // echo "<td>". "<button onclick='confirm_delete(".$receipts[$i]['id'].")'>ลบ</button>" . "</td>";
                 echo "</tr>";
-            }                             
+            }
+            echo "<tr>";
+
+                echo "<td class='text-center' colspan='1'>รวม</td>";
+                echo "<td class='text-center' colspan='2'>".$sum['count']."   รายการ</td>";
+            //     echo "<td class='text-center'>-</td>";
+                // echo "<td class='text-center'>รายการ</td>";
+                echo "<td class='text-center' colspan='2'>".$sum['amount']."</td>";
+                echo "<td class='text-center' colspan='2'>บาท</td>";
+                // echo "<td class='text-center' colspan='1'>จำนวนรายการ</td>";
+
+                // echo "<td class='text-center' colspan='1'>บาท</td>";
+            //     echo "<td class='text-center'>-</td>";
+            //     echo "<td class='text-center'>-</td>";
+            echo "</tr>";
         echo "</table>";
     }
 
 ?>
-
-

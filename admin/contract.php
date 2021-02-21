@@ -25,6 +25,7 @@
                     // echo $key;
                     echo "<th class='text-center'>$key</th>";
                 }
+                echo "<th class='text-center'>". "Status" . "</th>";
                 echo "<th class='text-center'>". "แก้ไข" . "</th>";
                 // echo "<th>". "ลบ" . "</th>";
             echo "</tr>";   
@@ -43,8 +44,23 @@
                         echo "<td>".$renters[$i][$key]."</td>";
                     }
                     else
-                    {
+                    {                        
                         echo "<td><a href='".$renters[$i][$key]."'>ดูสัญญา</a></td>";
+                        if(time() < strtotime($renters[$i]['outdate']))
+                        {
+                            if(time()< strtotime($renters[$i]['indate']))
+                            {
+                                echo "<td class='bg-warning'>Waiting</td>"; 
+                            }
+                            else
+                            {
+                                echo "<td class='bg-success'>In</td>"; 
+                            }
+                        }
+                        else
+                        {
+                            echo "<td class='bg-danger'>Out</td>";
+                        }
                     }
                 }
                 $id = $renters[$i]['id'];

@@ -1,10 +1,10 @@
 <?php
     require_once("function/container_function.php");
-    require_once("function/renter_function.php");    
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+    require_once("function/renter_function.php");
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
     if($_SESSION['username'] == "" or $_SESSION['password'] == "")
 	{
 		header("location:../index.html");
@@ -66,7 +66,7 @@
                         </ul> -->
                     </li>
                     <li>
-                        <a onclick="return getContent('customer.php')">Customer</a>                        
+                        <a onclick="return getContent('customer.php')">Customer</a>
                     </li>
                     <li>
                         <a onclick="return getContent('contract.php')">Rent Contract</a>
@@ -75,7 +75,7 @@
                         <a onclick="return getContent('receipt.php')">Receipt</a>
                     </li>
                     <li>
-                        <a onclick="return getContent('manuscript.php')">Manuscript</a>
+                        <a onclick="return getContent('summary.php')">Summary</a>
                     </li>
                 </ul>
                 <ul class="list-unstyled components">
@@ -94,7 +94,7 @@
                             </button>
                         </div>
                     </div>
-                </nav>    
+                </nav>
                 <div id="page">
                     <h2 class="text-center">ตู้คอนเทนเนอร์และภาพรวมทั้งหมด</h2>
                     <?php
@@ -109,8 +109,8 @@
                                     echo "<th class='text-center'>Outdate</th>";
                                     echo "<th class='text-center'>Remaining time(days)</th>";
                                     echo "<th class='text-center'>Rent_Id</th>";
-                                echo "</tr>";   
-                                
+                                echo "</tr>";
+
                                 for($i = 0;$i < count($container);$i++)
                                 {
                                     $renter = getrenterByContId($container[$i]['id']);
@@ -131,7 +131,7 @@
                                     }
                                     if($k!=-1)
                                     {
-                                        $remaintime = comparetime($renter[$k]['outdate']);  
+                                        $remaintime = comparetime($renter[$k]['outdate']);
                                         echo "<tr>";
                                             echo "<td>".$container[$i]['id']."</td>";
                                             echo "<td class='bg-success'>Occupied</td>";
@@ -153,14 +153,14 @@
                                             echo "<td>-</td>";
                                         echo "</tr>";
                                     }
-                                }                             
+                                }
                             echo "</table>";
                         }
                     ?>
                     <button onclick="getContent('form/customerdata_form.php')">เพิ่มลูกค้า</button>
                     <button onclick="getContent('form/rentdata_form.php')">เพิ่มผู้เช่า</button> <!-- rentdata.php-->
                     <button onclick="getContent('form/receipt_form.php')">เพิ่มใบเสร็จรับเงิน</button>
-                </div>                
+                </div>
             </div>
         </div>
 
@@ -175,7 +175,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- jQuery Custom Scroller CDN -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-        
+
         <script type="text/javascript">
             const original = document.getElementById("page").innerHTML
             $(document).ready(function () {

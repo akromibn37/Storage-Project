@@ -1,8 +1,8 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+    if(!isset($_SESSION))
+    {
+        session_start();
+    }
     if($_SESSION['username'] == "" or $_SESSION['password'] == "")
 	{
 		header("location:../../index.html");
@@ -14,7 +14,7 @@
     {
         $conn = CreateConnection();
 
-        $sql = "INSERT INTO `receipt`(`id`, `rent_id`, `type`, `amount`, `date`, `document`) 
+        $sql = "INSERT INTO `receipt`(`id`, `rent_id`, `type`, `amount`, `date`, `document`)
         VALUES ('', '$rent_id', '$type','$amount','$date','$file')";
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
@@ -22,8 +22,23 @@
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-        
+
         $conn->close();
+    }
+    function getSumamount()
+    {
+      $conn = CreateConnection();
+
+      $sql = "SELECT SUM(amount),COUNT(id) FROM receipt";
+      $results = $conn->query($sql);
+      $val = $results -> fetch_assoc();
+      // $ans = $val['SUM(amount)'];
+      $ans = array("amount"=>$val['SUM(amount)'],
+                    "count"=>$val['COUNT(id)'],
+                  );
+      // echo $ans;
+
+      return $ans;
     }
     function getAllreceipt()
     {
@@ -88,7 +103,7 @@
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-        
+
         $conn->close();
     }
 ?>
